@@ -18,10 +18,10 @@ export default {
     return {
       cards: [{
         key: 1,
-        img: require('../assets/card1.jpg'),
+        img: require('../assets/card1.gif'),
         title: 'Ông già Noel',
         subtitle: '@Noel',
-        content: 'Merry Christmas',
+        content: ['Luôn luôn vui vẻ và hạnh phúc nha ốc sên', 'Chúc mừng Giáng sinh'],
         tag: ['@son.ht','#snow', '#winter'],
         time:'10:07 PM - 25 Dec 2018'
       },{
@@ -34,22 +34,6 @@ export default {
         time:'10:07 PM - 25 Dec 2018'
       },{
         key: 3,
-        img: require('../assets/card3.png'),
-        title: 'Ông già Noel',
-        subtitle: '@Noel',
-        content: 'Merry Christmas',
-        tag: ['@son.ht','#snow', '#winter'],
-        time:'10:07 PM - 25 Dec 2018'
-      },{
-        key: 4,
-        img: require('../assets/card4.jpg'),
-        title: 'Ngôi nhà tuyết',
-        subtitle: '@Home',
-        content: 'Merry Christmas',
-        tag: ['@son.ht','#home', '#noel'],
-        time:'10:07 PM - 25 Dec 2018'
-      },{
-        key: 5,
         img: require('../assets/card5.gif'),
         title: 'Ông già Noel',
         subtitle: '@Noel',
@@ -57,8 +41,24 @@ export default {
         tag: ['@son.ht','#snow', '#winter'],
         time:'10:07 PM - 25 Dec 2018'
       },{
-        key: 6,
+        key: 4,
+        img: require('../assets/card3.png'),
+        title: 'Ngôi nhà tuyết',
+        subtitle: '@Home',
+        content: 'Merry Christmas',
+        tag: ['@son.ht','#home', '#noel'],
+        time:'10:07 PM - 25 Dec 2018'
+      },{
+        key: 5,
         img: require('../assets/card6.gif'),
+        title: 'Ông già Noel',
+        subtitle: '@Noel',
+        content: 'Merry Christmas',
+        tag: ['@son.ht','#snow', '#winter'],
+        time:'10:07 PM - 25 Dec 2018'
+      },{
+        key: 6,
+        img: require('../assets/card4.jpg'),
         title: 'Ngôi nhà tuyết',
         subtitle: '@Home',
         content: 'Merry Christmas',
