@@ -29,7 +29,7 @@ export default {
         img: require('../assets/card2.png'),
         title: 'Ngôi nhà tuyết',
         subtitle: '@Home',
-        content: 'Merry Christmas',
+        content: ['Merry Christmas'],
         tag: ['@son.ht','#home', '#noel'],
         time:'10:07 PM - 25 Dec 2018'
       },{
@@ -37,7 +37,7 @@ export default {
         img: require('../assets/card5.gif'),
         title: 'Ông già Noel',
         subtitle: '@Noel',
-        content: 'Merry Christmas',
+        content: ['Merry Christmas'],
         tag: ['@son.ht','#snow', '#winter'],
         time:'10:07 PM - 25 Dec 2018'
       },{
@@ -45,7 +45,7 @@ export default {
         img: require('../assets/card3.png'),
         title: 'Ngôi nhà tuyết',
         subtitle: '@Home',
-        content: 'Merry Christmas',
+        content: ['Merry Christmas'],
         tag: ['@son.ht','#home', '#noel'],
         time:'10:07 PM - 25 Dec 2018'
       },{
@@ -53,7 +53,7 @@ export default {
         img: require('../assets/card6.gif'),
         title: 'Ông già Noel',
         subtitle: '@Noel',
-        content: 'Merry Christmas',
+        content: ['Merry Christmas'],
         tag: ['@son.ht','#snow', '#winter'],
         time:'10:07 PM - 25 Dec 2018'
       },{
@@ -61,7 +61,7 @@ export default {
         img: require('../assets/card4.jpg'),
         title: 'Ngôi nhà tuyết',
         subtitle: '@Home',
-        content: 'Merry Christmas',
+        content: ['Merry Christmas'],
         tag: ['@son.ht','#home', '#noel'],
         time:'10:07 PM - 25 Dec 2018'
       }]
@@ -73,6 +73,7 @@ export default {
 <style lang="scss" scoped>
   .card-container {
     width: 70%;
+    min-width: 350px;
     padding: 50px;
     background: white;
     border: 1px solid #e8e8e8;

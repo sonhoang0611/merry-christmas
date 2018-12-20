@@ -1,6 +1,6 @@
 <template>
-  <div class="card" @click="openCard">
-    <div class="christmas-card">
+  <div class="card">
+    <div class="christmas-card" @click="openCard">
       <div class="card-image">
         <figure class="image is-4by3">
           <img :src="card.img" :alt="card.title">
@@ -32,9 +32,14 @@
       <span class="card-modal__close" @click="closeCard"><i class="fa fa-times" aria-hidden="true"></i></span>
       <div class="card-modal__content">
         <!-- Modal Content (The Image) -->
-        <img class="card-modal__img" :src="card.img">
+        <div class="card-modal__img">
+          <img :src="card.img">
+        </div>
         <!-- Modal Caption (Image Text) -->
-        <p :id="card.key" class="card-modal__caption"></p>
+        <div class="card-modal__text">
+          <p class="card-modal__hide">{{card.content}}</p>
+          <p :id="card.key" class="card-modal__caption"></p>
+        </div>
       </div>
     </div>
   </div>
@@ -117,8 +122,11 @@ export default {
 
       /* Modal Content */
       &__content {
+        display: flex;
+        align-items: center;
+        width: 90%;
         position: relative;
-        background: white;
+        background: #ebffff;
         animation: zoomIn 0.6s;
         padding: 20px;
         border-radius: 5px;
@@ -126,12 +134,21 @@ export default {
           from {transform:scale(0)}
           to {transform:scale(1)}
         }
+
+        @media (max-width: 498px) {
+          flex-direction: column;
+        }
       }
 
       /* Modal Image */
       &__img {
         width: 100%;
-        max-width: 900px;
+        max-width: 750px;
+        min-width: 320px;
+      }
+
+      &__hide {
+        visibility: hidden;
       }
 
       /* The Close Button */
@@ -151,16 +168,16 @@ export default {
         }
       }
 
+      &__text {
+        padding: 20px 0;
+      }
+
       /* Caption of Modal Image (Image Text) - Same Width as the Image */
       &__caption {
-        margin: auto;
-        display: block;
-        text-align: center;
-        padding: 30px 0 15px;
-        font-size: 1.5em;
-        font-weight: bold;
-        letter-spacing: 3px;
-        word-spacing: 6px;
+        font-size: 1.3em;
+        font-weight: 600;
+        letter-spacing: 2px;
+        word-spacing: 5px;
       }
     }
   }
