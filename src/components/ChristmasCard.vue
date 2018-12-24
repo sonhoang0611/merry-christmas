@@ -1,6 +1,9 @@
 <template>
   <div class="card">
     <div class="christmas-card" @click="openCard">
+      <div class="card-hover">
+        Bấm vào để mở thiệp nhen
+      </div>
       <div class="card-image">
         <figure class="image is-4by3">
           <img :src="card.img" :alt="card.title">
@@ -8,28 +11,17 @@
       </div>
       <div class="card-content">
         <div class="media">
-          <div class="media-left">
-            <figure class="image is-48x48">
-              <img :src="card.img" :alt="card.title">
-            </figure>
-          </div>
           <div class="media-content">
             <p class="title is-4">{{card.title}}</p>
             <p class="subtitle is-6">{{card.subtitle}}</p>
           </div>
         </div>
-
-        <div class="content">
-          {{card.content}}
-          <br>
-          <time datetime="2016-1-1">10:07 PM - 25 Dec 2018</time>
-        </div>
       </div>
     </div>
      <!-- The Modal -->
-    <div id="myModal" class="card-modal">
+    <div id="myModal" class="card-modal" @click="closeCard">
       <!-- The Close Button -->
-      <span class="card-modal__close" @click="closeCard"><i class="fa fa-times" aria-hidden="true"></i></span>
+      <span class="card-modal__close"><i class="fa fa-times" aria-hidden="true"></i></span>
       <div class="card-modal__content">
         <!-- Modal Content (The Image) -->
         <div class="card-modal__img">
@@ -37,8 +29,8 @@
         </div>
         <!-- Modal Caption (Image Text) -->
         <div class="card-modal__text">
-          <p class="card-modal__hide">{{card.content}}</p>
           <p :id="card.key" class="card-modal__caption"></p>
+          <p class="card-modal__hide">{{card.content}}</p>
         </div>
       </div>
     </div>
@@ -51,6 +43,17 @@ export default {
   props: {
     card: {
       type: Object,
+    }
+  },
+  data() {
+    return {
+      timeouts: []
+    }
+  },
+  mounted() {
+    const modalContent = this.$el.querySelector('.card-modal__content');
+    modalContent.onclick = function(e){
+      e.stopPropagation();
     }
   },
   methods: {
@@ -74,6 +77,12 @@ export default {
       e.stopPropagation();
       const modal = this.$el.querySelector('.card-modal');
       modal.style.display = "none";
+
+      for(var i=0; i<this.timeouts.length; i++)
+      {
+        clearTimeout(this.timeouts[i]);
+      }
+      timeouts = [];
     },
     typewritter(aText, iIndex, iScrollAt, iRow, iArrLength, iTextPos, sContents) {
       const self = this;
@@ -89,10 +98,10 @@ export default {
         iIndex++;
         if ( iIndex != aText.length ) {
         iArrLength = aText[iIndex].length;
-        setTimeout(() => this.typewritter(aText, iIndex, iScrollAt, iRow, iArrLength, iTextPos, sContents), 500);
+        this.timeouts.push(setTimeout(() => this.typewritter(aText, iIndex, iScrollAt, iRow, iArrLength, iTextPos, sContents), 800));
         }
       } else {
-        setTimeout(() => this.typewritter(aText, iIndex, iScrollAt, iRow, iArrLength, iTextPos, sContents), 200);
+        this.timeouts.push(setTimeout(() => this.typewritter(aText, iIndex, iScrollAt, iRow, iArrLength, iTextPos, sContents), 150));
       }
 
     }
@@ -102,9 +111,32 @@ export default {
 
 <style lang="scss" scoped>
   .card {
-    min-width: 300px;
+    min-width: 275px;
     width: 30%;
     margin: 20px 0;
+
+    .card-hover {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      display: none;
+    }
+
+    .christmas-card {
+      &:hover {
+        cursor: pointer;
+        .card-hover {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: rgba(0,0,0,0.7);
+          color: white;
+          z-index: 2;
+        }
+      }
+    }
 
     .card-modal {
       display: none; /* Hidden by default */
@@ -126,7 +158,7 @@ export default {
         align-items: center;
         width: 90%;
         position: relative;
-        background: #ebffff;
+        background: #f9ffff;
         animation: zoomIn 0.6s;
         padding: 20px;
         border-radius: 5px;
@@ -169,7 +201,7 @@ export default {
       }
 
       &__text {
-        padding: 20px 0;
+        padding: 0 30px;
       }
 
       /* Caption of Modal Image (Image Text) - Same Width as the Image */

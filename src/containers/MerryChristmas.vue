@@ -1,6 +1,6 @@
 <template>
   <div class="xmas">
-    <iframe width="600" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/542038119&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+    <iframe width="70%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/549354723&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
     <card-container></card-container>
   </div>
 </template>
@@ -32,6 +32,7 @@ export default {
 
     iframe {
       max-width: 100%;
+      min-width: 300px;
     }
   }
 </style>
