@@ -21,7 +21,7 @@ export default {
         img: require('../assets/card1.gif'),
         title: 'Mèo nghịch phá',
         subtitle: '@Thiệp 1',
-        content: ['Giáng sinh vui vẻ và an lành nhé người.', 'À mà con mèo con nhà ta cũng lớn như con trong hình rồi á.', 'Nó ngoan lắm, ko phá phách lung tung như con mèo mẹ.', 'Lông nó giờ có thêm màu đỏ nữa. Bữa nào ta gửi ảnh mi xem hihi.'],
+        content: ['Giáng sinh vui vẻ và an lành nhé người.', 'À mà con mèo con nhà ta cũng lớn như con trong hình rồi á.', 'Nó ngoan lắm, không phá phách lung tung như con mèo mẹ.', 'Lông nó giờ có thêm màu đỏ nữa. Bữa nào ta gửi ảnh mi xem hihi.'],
         tag: ['@son.ht','#snow', '#winter'],
         time:'10:07 PM - 25 Dec 2018'
       },{
@@ -77,7 +77,7 @@ export default {
         img: require('../assets/card9.jpg'),
         title: 'Cười nhiều lên nhé',
         subtitle: '@Thiệp 8',
-        content: ['Thật sự muốn chở mi đi dạo đâu đó lòng vòng dịp noel lắm.', 'Nhưng chắc không may mắn rồi...', 'Chắc vẫn còn nhiều dịp khác gặp nhau mà, phải không?'],
+        content: ['Thật sự muốn chở mi đi dạo đâu đó lòng vòng dịp noel lắm.', 'Nhưng chắc không may mắn rồi...', 'Chắc vẫn còn nhiều dịp khác gặp nhau mà, phải không???'],
         tag: ['@son.ht','#home', '#noel'],
         time:'10:07 PM - 25 Dec 2018'
       },{
@@ -85,7 +85,7 @@ export default {
         img: require('../assets/card11.gif'),
         title: 'Giáng sinh vui vẻ',
         subtitle: '@Thiệp 9',
-        content: ['Tấm cuối cùng rồi', 'Chỉ muốn nhắc mi ăn và uống thuốc đầy đủ để chóng khỏe và đỡ bệnh', 'Chơi game ít ít thôi còn ngủ sớm nha.', 'Đi làm về khuya nhớ chạy xe cẩn thận đó.', 'Merry Christmas!!!'],
+        content: ['Tấm cuối cùng rồi.', 'Chỉ muốn nhắc mi ăn và uống thuốc đầy đủ để chóng khỏe và đỡ bệnh.', 'Chơi game ít ít thôi còn ngủ sớm nha.', 'Đi làm về khuya nhớ chạy xe cẩn thận đó.', 'Merry Christmas!!!'],
         tag: ['@son.ht','#home', '#noel'],
         time:'10:07 PM - 25 Dec 2018'
       }]
